@@ -1,9 +1,99 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="text-[11pt] md:text-[13pt] lg:text-[18pt]">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Carrd Template #72</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            backgroundImage: {
+              main: "url('data:image/svg+xml;charset=utf8,%3Csvg%20viewBox%3D%220%200%20512%20512%22%20width%3D%22512%22%20height%3D%22512%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%20%3Cfilter%20id%3D%22noise%22%3E%20%3CfeTurbulence%20type%3D%22fractalNoise%22%20baseFrequency%3D%220.875%22%20result%3D%22noise%22%20%2F%3E%20%3CfeColorMatrix%20type%3D%22matrix%22%20values%3D%220%200%200%200%200%200%200%200%200%200%200%200%200%200%200%200%200%200%200.23828125%200%22%20%2F%3E%20%3C%2Ffilter%3E%20%3Crect%20filter%3D%22url%28%23noise%29%22%20x%3D%220%22%20y%3D%220%22%20width%3D%22512%22%20height%3D%22512%22%20fill%3D%22transparent%22%20opacity%3D%221%22%20%2F%3E%3C%2Fsvg%3E'), linear-gradient(45deg, rgba(145,181,201,0.412) 0%, rgba(166,185,255,0.31) 100%), url('https://61816ab53696835d.demo.carrd.co/assets/images/bg.jpg?v=7496a20c')",
+            },
+            backgroundSize: {
+              "main-size": "512px, cover, cover",
+            },
+            fontFamily: {
+              arial: ["Arial", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
   </head>
-  <body></body>
+
+  <body class="min-w-[320px] overflow-x-hidden font-arial">
+    <div
+      class="w-screen h-screen fixed top-0 z-0 transform scale-100 bg-main bg-center bg-main-size"
+    ></div>
+
+    <div
+      class="items-center flex flex-col justify-center overflow-hidden relative p-6 min-h-screen z-[2]"
+    >
+      <div
+        class="main flex items-center justify-center relative text-center z-1 bg-white rounded-lg max-w-full"
+      >
+        <div class="inner w-[24rem] rounded-lg py-12 px-8 max-w-full md:px-10">
+          <h1
+            class="text-[3em] font-bold leading-[1.25] text-[#363636] mb-3 tracking-[-0.125rem] md:text-[3.25em]"
+          >
+            Jane D.
+          </h1>
+
+          <p class="my-3 text-[#363636] text-[1em] leading-[1.75]">
+            Professional Image Capturer
+          </p>
+
+          <div class="my-9 -mx-8 md:-mx-10 md:my-12">
+            <div class="h-[17.5rem] sm:h-[21.875rem] md:h-[22.375rem]">
+              <img
+                src="https://i.ibb.co/bzPBJNk/image01.jpg"
+                alt="image01"
+                class="object-cover h-full object-center w-full"
+              />
+            </div>
+          </div>
+
+          <ul
+            class="mb-0 mt-4.5 text-[1em] flex flex-wrap justify-center gap-3 p-0"
+          >
+            <a
+              href="#"
+              class="w-[2em] h-[2em] rounded-full bg-[#363636] flex items-center justify-center text-white duration-[250ms] hover:bg-[#606C82]"
+              aria-label="Twitter"
+            >
+              <i class="fa fa-brands fa-twitter"></i>
+            </a>
+            <a
+              href="#"
+              class="w-[2em] h-[2em] rounded-full bg-[#363636] flex items-center justify-center text-white duration-[250ms] hover:bg-[#606C82]"
+              aria-label="Instagram"
+            >
+              <i class="fa fa-brands fa-instagram"></i>
+            </a>
+            <a
+              href="#"
+              class="w-[2em] h-[2em] rounded-full bg-[#363636] flex items-center justify-center text-white duration-[250ms] hover:bg-[#606C82]"
+              aria-label="Unsplash"
+            >
+              <i class="fa fa-brands fa-unsplash"></i>
+            </a>
+            <a
+              href="#"
+              class="w-[2em] h-[2em] rounded-full bg-[#363636] flex items-center justify-center text-white duration-[250ms] hover:bg-[#606C82]"
+              aria-label="Email"
+            >
+              <i class="fa fa-solid fa-envelope"></i>
+            </a>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>
