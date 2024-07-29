@@ -431,7 +431,6 @@
 
                         <textarea
                           id="form-70-message"
-                          type="text"
                           class="text-[1em] p-[1.05rem] pt-[0.7875rem] pl-[1.075rem] tracking-[0.025rem] w-70-input h-[13rem] px-[1.05rem] leading-[1.5] text-[#474747] font-source-sans-pro rounded-[0.25rem] font-light border border-[#CCCCCC] w-full focus:border-[#1CCBD6] focus:shadow-70-input outline-none"
                         ></textarea>
                       </div>
@@ -550,7 +549,7 @@
         });
       });
 
-      const hash = location.hash ? location.hash.substring(1) : null;
+      const hash = location.hash ? location.hash.substring(1) : 'home';
 
       // Initial setup
       [...sections].forEach((section, index) => {
