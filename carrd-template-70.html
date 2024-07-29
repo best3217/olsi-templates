@@ -60,7 +60,7 @@
         <div
           class="inner flex flex-col lg:flex-col-reverse lg:flex-nowrap w-[74rem] relative py-[0.9375rem] px-[0.9375rem] min-[360px]:py-5 min-[360px]:px-5 md:py-12 md:px-12"
         >
-          <section class="home-section">
+          <section data-id="home" class="home-section">
             <div class="bg-white mb-3">
               <div class="wrapper">
                 <div
@@ -87,7 +87,7 @@
                       sociosqu ad litora torquent per nostra inceptos.
                     </p>
                     <ul
-                      class="mt-5 mb-0 p-0 flex flex-col gap-3 justify-center sm:flex-row lg:justify-start min-[360px]:gap-4"
+                      class="buttons mt-5 mb-0 p-0 flex flex-col gap-3 justify-center sm:flex-row lg:justify-start min-[360px]:gap-4"
                     >
                       <li>
                         <a
@@ -98,7 +98,7 @@
                       </li>
                       <li>
                         <a
-                          href="#work"
+                          href="#about"
                           class="max-w-[32rem] w-full sm:max-w-full sm:w-auto inline-block text-[#474747] border border-[#CCCCCC] h-10 leading-70-btn px-5 pl-6 uppercase font-raleway tracking-[0.25rem] text-[0.625em] font-bold rouded-[0.25rem] transition duration-[0.25s] rounded-[0.25rem] hover:border-[#1CCBD6] hover:text-[#1CCBD6]"
                           >About</a
                         >
@@ -220,7 +220,7 @@
             </div>
           </section>
 
-          <section class="work-section hidden">
+          <section data-id="work" class="work-section">
             <div class="bg-white">
               <div class="wrapper">
                 <div
@@ -280,7 +280,7 @@
                     </p>
 
                     <ul
-                      class="mt-3 mb-0 p-0 flex flex-col gap-3 sm:flex-row lg:justify-start min-[360px]:gap-4"
+                      class="buttons mt-3 mb-0 p-0 flex flex-col gap-3 sm:flex-row lg:justify-start min-[360px]:gap-4"
                     >
                       <li>
                         <a
@@ -296,7 +296,7 @@
             </div>
           </section>
 
-          <section class="about-section hidden">
+          <section data-id="about" class="about-section">
             <div class="bg-white">
               <div class="wrapper">
                 <div
@@ -320,7 +320,7 @@
                       maximus ac varius enim lorem dolore.
                     </p>
                     <ul
-                      class="mt-[0.5625rem] mb-0 p-0 flex flex-col gap-3 md:mt-3 sm:flex-row min-[360px]:gap-4"
+                      class="buttons mt-[0.5625rem] mb-0 p-0 flex flex-col gap-3 md:mt-3 sm:flex-row min-[360px]:gap-4"
                     >
                       <li>
                         <a
@@ -354,11 +354,11 @@
             </div>
           </section>
 
-          <section class="contact-section text-center hidden">
+          <section data-id="contact" class="contact-section text-center">
             <div class="mb-8 mt-0 md:mb-10">
               <div class="w-full max-w-[30rem] inline-block mx-auto text-left">
                 <div>
-                  <ul class="m-0 p-0 flex flex-col">
+                  <ul class="buttons m-0 p-0 flex flex-col">
                     <li>
                       <a
                         href="#home"
@@ -451,10 +451,15 @@
             </div>
           </section>
 
-          <section class="contact-done-section text-center hidden">
+          <section
+            data-id="contact-done"
+            class="contact-done-section text-center"
+          >
             <div>
               <div class="bg-white w-full max-w-[25rem] inline-block mx-auto">
-                <div class="py-[2.625rem] px-6 min-[360px]:py-[3.5rem] min-[360px]:px-8 md:py-[4rem] md:px-[3rem]">
+                <div
+                  class="py-[2.625rem] px-6 min-[360px]:py-[3.5rem] min-[360px]:px-8 md:py-[4rem] md:px-[3rem]"
+                >
                   <h2
                     class="font-raleway uppercase text-[#474747] text-[1.25em] mb-[0.9375rem] tracking-[0.39375rem] leading-[1.375] w-70-title font-bold mt-0 md:mb-[1.25rem] md:tracking-[0.45rem]"
                   >
@@ -469,7 +474,9 @@
                     fermentum nibh ullamcorper magna.
                   </p>
 
-                  <ul class="mt-[0.5625rem] mb-0 p-0 flex md:mt-3 justify-center">
+                  <ul
+                    class="buttons mt-[0.5625rem] mb-0 p-0 flex md:mt-3 justify-center"
+                  >
                     <li>
                       <a
                         href="#home"
@@ -486,4 +493,71 @@
       </div>
     </div>
   </body>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const links = document.querySelectorAll("ul.buttons li a");
+      const sections = document.getElementsByTagName("section");
+
+      function showSection(id) {
+        const currentSection = document.querySelector("section:not(.hidden)");
+        const nextSection = document.getElementsByClassName(
+          `${id.slice(1)}-section`
+        )[0];
+
+        // Animate current section out
+        currentSection.classList.add(
+          "transition",
+          "transform",
+          "duration-[0.5s]",
+          "scale-75",
+          "opacity-0"
+        );
+
+        setTimeout(() => {
+          currentSection.classList.add("hidden");
+          currentSection.classList.remove(
+            "transition",
+            "transform",
+            "scale-75",
+            "duration-[0.5s]",
+            "opacity-0"
+          );
+
+          // Animate next section in
+          nextSection.classList.remove("hidden");
+          nextSection.classList.add(
+            "transition",
+            "transform",
+            "scale-90",
+            "duration-[0.5s]",
+            "opacity-0"
+          );
+
+          setTimeout(() => {
+            nextSection.classList.remove("scale-90", "opacity-0");
+            window.scrollTo(0, 0);
+          }, 50);
+        }, 500);
+      }
+
+      links.forEach((link, index) => {
+        link.addEventListener("click", (event) => {
+          const id = event.target.getAttribute("href");
+          window.location.replace(id);
+          event.preventDefault();
+          showSection(id);
+        });
+      });
+
+      const hash = location.hash ? location.hash.substring(1) : null;
+
+      // Initial setup
+      [...sections].forEach((section, index) => {
+        if (hash !== section.getAttribute("data-id")) {
+          section.classList.add("hidden", "opacity-0");
+        }
+      });
+    });
+  </script>
 </html>
